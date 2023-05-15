@@ -1,0 +1,11 @@
+naCos:
+  address: "mse-9adde470-p.nacos-ans.mse.aliyuncs.com"
+  port: 8848
+  context-path: "/nacos"
+  log-level: debug
+  namespace: 26f96dff-111f-485b-9b89-9131dd48c4e4
+  username: nacos
+  password: c$^#v3QixpK38DoH
+  group: bff-grpc-dev
+  cluster-name: cluster-bff-grpc-dev
+  data-id: bff-grpc

@@ -1,0 +1,102 @@
+definitions:
+  pbs.ReviewProjectData:
+    properties:
+      created_date:
+        type: string
+      created_user:
+        type: string
+      deleted:
+        type: integer
+      description:
+        type: string
+      id:
+        type: integer
+      mode_code:
+        type: string
+      name:
+        type: string
+      status:
+        type: integer
+      updated_date:
+        type: string
+      updated_user:
+        type: string
+    type: object
+  pbs.ReviewProjectListResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/pbs.ReviewProjectData'
+        type: array
+      page_num:
+        type: integer
+      page_size:
+        type: integer
+      total:
+        description: |-
+          定义接收的参数
+          参数类型 参数名 标识号(不可重复)
+        type: integer
+    type: object
+  stru.Response:
+    properties:
+      code:
+        type: integer
+      data: {}
+      error:
+        type: string
+    type: object
+info:
+  contact: {}
+  license:
+    name: Apache 2.0
+  title: Swagger bff-grpc
+  version: "1.0"
+paths:
+  /mine/review/project/list:
+    get:
+      parameters:
+      - description: token
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: modeCode
+        type: string
+      - in: query
+        name: name
+        type: string
+      - in: query
+        name: pageNum
+        required: true
+        type: integer
+      - in: query
+        name: pageSize
+        required: true
+        type: integer
+      - in: query
+        name: showStatus
+        type: integer
+      - in: query
+        name: status
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            allOf:
+            - $ref: '#/definitions/stru.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/pbs.ReviewProjectListResponse'
+              type: object
+      summary: 获取项目列表
+      tags:
+      - review
+swagger: "2.0"
