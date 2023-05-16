@@ -1,6 +1,9 @@
 package rpc
 
 import (
+	"fmt"
+
+	"github.com/nacos-group/nacos-sdk-go/v2/vo"
 	otgrpc "github.com/opentracing-contrib/go-grpc"
 	"github.com/opentracing/opentracing-go"
 	"github.com/whj1990/go-core/config"
@@ -16,10 +19,15 @@ func NewGrpcClient() pbs.HandleServerClient {
 	if err != nil {
 		zap.L().Error(err.Error())
 	}
-	dialAddress := config.GetNacosConfigData().ClientServer.DialAddress
-	conn, err := grpc.Dial(dialAddress,
+	instance := config.SelectOneHealthyInstance(vo.SelectOneHealthInstanceParam{
+		ServiceName: "mine-grpc",
+		GroupName:   "group-mine-dev",             // 默认值DEFAULT_GROUP
+		Clusters:    []string{"cluster-mine-dev"}, // 默认值DEFAULT
+	})
+
+	//dialAddress := config.GetNacosConfigData().ClientServer.DialAddress
+	conn, err := grpc.Dial(fmt.Sprintf("%s:%d", instance.Ip, instance.Port),
 		[]grpc.DialOption{
-			//grpc.WithBlock(),
 			grpc.WithUnaryInterceptor(otgrpc.OpenTracingClientInterceptor(opentracing.GlobalTracer())),
 			grpc.WithTransportCredentials(cert),
 		}...)

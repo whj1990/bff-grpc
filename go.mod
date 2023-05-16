@@ -15,6 +15,7 @@ require (
 )
 
 replace github.com/whj1990/go-core v0.0.0-20230129075933-3330ebde0054 => /home/wwwroot/gowork/src/mine/go-core
+replace github.com/whj1990/mine-grrpc v0.0.0-20230512070629-c537e82ddc23 => /home/wwwroot/gowork/src/mine/mine-grrpc
 
 require (
 	github.com/KyleBanks/depth v1.2.1 // indirect

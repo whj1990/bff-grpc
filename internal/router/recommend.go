@@ -13,4 +13,5 @@ type RouteHandler struct {
 func (r *RouteHandler) SetRouter(app *gin.Engine) {
 	group := app.Group(constant.MineRouterGroup)
 	group.GET("/review/project/list", r.clientHandler.ReviewProjectList())
+	group.GET("/review/project/stream_client", r.clientHandler.StreamClientServer())
 }
