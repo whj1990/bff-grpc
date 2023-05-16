@@ -5,17 +5,16 @@ go 1.20
 require (
 	github.com/gin-gonic/gin v1.9.0
 	github.com/google/wire v0.5.0
+	github.com/nacos-group/nacos-sdk-go/v2 v2.2.1
 	github.com/opentracing-contrib/go-grpc v0.0.0-20210225150812-73cb765af46e
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/swaggo/swag v1.16.1
 	github.com/whj1990/go-common v0.0.0-20230202031541-49c0aa83b579
-	github.com/whj1990/go-core v0.0.0-20230129075933-3330ebde0054
-	github.com/whj1990/mine-grrpc v0.0.0-20230512070629-c537e82ddc23
+	github.com/whj1990/go-core v0.0.0-20230516052817-00ac04fa4fd2
+	github.com/whj1990/mine-grrpc v0.0.0-20230516054002-649428d8ede3
+	go.uber.org/zap v1.23.0
 	google.golang.org/grpc v1.55.0
 )
-
-replace github.com/whj1990/go-core v0.0.0-20230129075933-3330ebde0054 => /home/wwwroot/gowork/src/mine/go-core
-replace github.com/whj1990/mine-grrpc v0.0.0-20230512070629-c537e82ddc23 => /home/wwwroot/gowork/src/mine/mine-grrpc
 
 require (
 	github.com/KyleBanks/depth v1.2.1 // indirect
@@ -69,7 +68,6 @@ require (
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
-	github.com/nacos-group/nacos-sdk-go/v2 v2.2.1 // indirect
 	github.com/oleiade/lane v1.0.1 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.7 // indirect
@@ -97,7 +95,6 @@ require (
 	github.com/ugorji/go/codec v1.2.11 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/multierr v1.8.0 // indirect
-	go.uber.org/zap v1.23.0 // indirect
 	golang.org/x/arch v0.3.0 // indirect
 	golang.org/x/crypto v0.9.0 // indirect
 	golang.org/x/net v0.10.0 // indirect
