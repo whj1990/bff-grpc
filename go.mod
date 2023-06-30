@@ -15,7 +15,9 @@ require (
 	go.uber.org/zap v1.23.0
 	google.golang.org/grpc v1.55.0
 )
-
+replace (
+	github.com/whj1990/go-core v0.0.0-20230516052817-00ac04fa4fd2 => /home/wwwroot/gowork/src/mine/go-core
+)
 require (
 	github.com/KyleBanks/depth v1.2.1 // indirect
 	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1704 // indirect
